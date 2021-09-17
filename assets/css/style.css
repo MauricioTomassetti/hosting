@@ -452,11 +452,12 @@ body {
 .l-main__side-menu {
   background-image: linear-gradient( 
 138deg,#089ce9,#7be7ff);
-max-height: 50% !important;
+max-height: 90% !important;
 }
 
 .l-main__content {
   background-color: transparent !important;
+  
 }
 
 [id=c-permit-tab-er]:checked~nav [for=c-permit-tab-er], [id=c-permit-tab-nd]:checked~nav [for=c-permit-tab-nd], [id=c-permit-tab-rd]:checked~nav [for=c-permit-tab-rd], [id=c-permit-tab-st]:checked~nav [for=c-permit-tab-st], [id=c-permit-tab-to]:checked~nav [for=c-permit-tab-to] {
@@ -576,7 +577,7 @@ max-height: 50% !important;
 .l-main__side-menu-2 {
   background-image: linear-gradient( 
 138deg,#7000ff,#9c60c4);
-  max-height: 50% !important;
+  max-height: 90% !important;
 }
 
 .c-permit-tab-3__nav {
@@ -630,5 +631,5 @@ max-height: 50% !important;
 .l-main__side-menu-3 {
   background-image: linear-gradient( 
     138deg,#003fc0,#005ef5);
-  max-height: 50% !important;
+  max-height: 90% !important;
 }
