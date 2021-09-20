@@ -89,9 +89,9 @@ $(function(){
 			},
 			{
 				label: 'Costo de comision a liquidar en dias. Tarjeta de crédito. Unidad de comisiones en porcentaje.',
-				data: [6.39, 4.29, 3.39, 1.79],
+				data: [12.39, 8.29, 7.39, 1.79],
 				fill: false,
-				borderColor: 'rgb(75, 192, 192)',
+				borderColor: 'rgb(47, 240, 127)',
 				tension: 0.1
 			},
 		]
