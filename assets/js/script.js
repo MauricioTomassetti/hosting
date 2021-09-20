@@ -56,13 +56,62 @@ $(function(){
 
 $(function(){
     
+	//Grafico ML con tienda online y link de cobro
+	var ctx = document.getElementById('comisionesML').getContext('2d');
+	const labels = ['En el momento.', '10 días de aprobado a liquidar.','18 días de aprobado a liquidar.', '35 días de aprobado a liquidar.'];
+		data = {
+		labels: labels,
+		datasets: [{
+			label: 'Costo de comision a liquidar en dias. Unidad de comisiones en porcentaje.',
+			data: [6.39, 4.29, 3.39, 1.79],
+			fill: false,
+			borderColor: 'rgb(75, 192, 192)',
+			tension: 0.1
+		}]
+		}
+
+ var chartInstance = new Chart(ctx, {
+		type: "line",
+		data: data
+	});
+
+		//Grafico ML con Point
+		var ctx = document.getElementById('comisionesMLPoint').getContext('2d');
+		const labelsPoint = ['En el momento.', '10 días de aprobado a liquidar.','18 días de aprobado a liquidar.', '35 días de aprobado a liquidar.'];
+			data = {
+			labels: labelsPoint,
+			datasets: [{
+				label: 'Costo de comision a liquidar en dias. Tarjeta de débito. Unidad de comisiones en porcentaje.',
+				data: [6.39, 4.29, 3.39, 1.79],
+				fill: false,
+				borderColor: 'rgb(75, 192, 192)',
+				tension: 0.1
+			},
+			{
+				label: 'Costo de comision a liquidar en dias. Tarjeta de crédito. Unidad de comisiones en porcentaje.',
+				data: [6.39, 4.29, 3.39, 1.79],
+				fill: false,
+				borderColor: 'rgb(75, 192, 192)',
+				tension: 0.1
+			},
+		]
+			}
+	
+	 var chartInstancePoint = new Chart(ctx, {
+			type: "line",
+			data: data
+		});
+	
+
+
+	
 // ============================================
 // As of Chart.js v2.7.0
 // http://www.chartjs.org/docs
 // ============================================
 
 //grafico de lineas
-var chart = document.getElementById("chart").getContext("2d"),
+/* var chart = document.getElementById("comisionesML").getContext("2d"),
 	gradient = chart.createLinearGradient(0, 0, 0, 450);
 gradient.addColorStop(0, "rgba(255, 0,0, 0.5)");
 gradient.addColorStop(0.5, "rgba(255, 0, 0, 0.25)");
@@ -219,7 +268,7 @@ chart = new Chart(ctx, {
         }
     }
 });
-
+ */
 //grafico de barras stacked
 
 var data = [{
