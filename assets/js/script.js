@@ -58,11 +58,12 @@ $(function(){
     
 	//Grafico ML con tienda online y link de cobro
 	var ctx = document.getElementById('comisionesML').getContext('2d');
+
 	const labels = ['En el momento.', '10 días de aprobado a liquidar.','18 días de aprobado a liquidar.', '35 días de aprobado a liquidar.'];
 		data = {
 		labels: labels,
 		datasets: [{
-			label: 'Costo de comision a liquidar en dias. Unidad de comisiones en porcentaje.',
+			label: 'Costo de comision a liquidar en dias.',
 			data: [6.39, 4.29, 3.39, 1.79],
 			fill: false,
 			borderColor: 'rgb(75, 192, 192)',
@@ -76,19 +77,19 @@ $(function(){
 	});
 
 		//Grafico ML con Point
-		var ctx = document.getElementById('comisionesMLPoint').getContext('2d');
+		var ctxPoint = document.getElementById('comisionesMLPoint').getContext('2d');
 		const labelsPoint = ['En el momento.', '10 días de aprobado a liquidar.','18 días de aprobado a liquidar.', '35 días de aprobado a liquidar.'];
 			data = {
 			labels: labelsPoint,
 			datasets: [{
-				label: 'Costo de comision a liquidar en dias. Tarjeta de débito. Unidad de comisiones en porcentaje.',
+				label: 'Tarjeta de débito.',
 				data: [6.39, 4.29, 3.39, 1.79],
 				fill: false,
 				borderColor: 'rgb(75, 192, 192)',
 				tension: 0.1
 			},
 			{
-				label: 'Costo de comision a liquidar en dias. Tarjeta de crédito. Unidad de comisiones en porcentaje.',
+				label: 'Tarjeta de crédito.',
 				data: [12.39, 8.29, 7.39, 1.79],
 				fill: false,
 				borderColor: 'rgb(47, 240, 127)',
@@ -97,14 +98,125 @@ $(function(){
 		]
 			}
 	
-	 var chartInstancePoint = new Chart(ctx, {
+	 var chartInstancePoint = new Chart(ctxPoint, {
 			type: "line",
 			data: data
 		});
-	
 
+				//Grafico con Mobex
+				var ctxMobex = document.getElementById('comisionesMobex').getContext('2d');
+				const labelsMobex = ['5 días de aprobado a liquidar.'];
+					data = {
+					labels: labelsMobex,
+					datasets: [{
+						label: 'Costo de comision a liquidar en dias. Tarjeta de débito, credito y efectivo.',
+						data: [5.00],
+						fill: false,
+						backgroundColor: ["purple"],
+						tension: 0.1
+					},
+				]}
+			
+			 var chartInstanceMobex = new Chart(ctxMobex, {
+					type: "bar",
+					data: data
+				});
 
-	
+							//Grafico con PAGO360
+							var ctxPago360 = document.getElementById('comisionesPago360').getContext('2d');
+							const labelsPago360 =  ['Innmediato', '2 días hábiles.', '3 días hábiles.', '4 días hábiles.', '5 días hábiles.','14 días hábiles.'];
+								data = {
+								labels: labelsPago360,
+								datasets: [{
+									label: 'Debito Directo(CBU). DEBIN. Tarjeta de Débito(PEI).',
+									data: [3.75],
+									fill: false,
+									borderColor: 'rgb(75, 192, 192)',
+									backgroundColor: "blue",
+									tension: 0.1
+								},
+								{
+									label: 'Tarjeta de Débito.  Tarjeta de Crédito 2 o más Pagos',
+									data: [0,3.75],
+									fill: false,
+									borderColor: 'rgb(47, 240, 127)',
+									backgroundColor: "green",
+									tension: 0.1
+								},
+								{
+									label: 'Link Pagos (Red Link). Pago Mis Cuentas (Banelco). Cobro Express. Provincia Net Pagos',
+									data: [0,0,3.75],
+									fill: false,
+									borderColor: 'rgb(47, 240, 127)',
+									backgroundColor: "pink",
+									tension: 0.1
+								},
+								{
+									label: 'Rapipago',
+									data: [0,0,0,3.75],
+									fill: false,
+									borderColor: 'rgb(47, 240, 127)',
+									backgroundColor: "yellow",
+									tension: 0.1
+								},
+								{
+									label: 'Pago Fácil',
+									data: [0,0,0,0,3.75],
+									fill: false,
+									borderColor: 'rgb(47, 240, 127)',
+									backgroundColor: "red",
+									tension: 0.1
+								},
+								{
+									label: 'Tarjeta de Credito 1 Pago / Plan Z.',
+									data: [0,0,0,0,0,3.75],
+									fill: false,
+									borderColor: 'rgb(47, 240, 127)',
+									backgroundColor: "orange",
+									tension: 0.1
+								},
+							]}
+						
+						 var chartInstancePago360 = new Chart(ctxPago360, {
+								type: "bar",
+								data: data
+							});
+					
+		
+	//Grafico ML con tienda online y link de cobro
+	var ctxCompartivaML = document.getElementById('comisionesComparativaML').getContext('2d');
+
+	const labelsCoparativaML = ['En el momento.', '10 días de aprobado a liquidar.','18 días de aprobado a liquidar.', '35 días de aprobado a liquidar.'];
+		data = {
+		labels: labelsCoparativaML,
+		datasets: [{
+			label: 'Costo de comision',
+			data: [6.39, 4.29, 3.39, 1.79],
+			fill: false,
+			borderColor: 'rgb(75, 192, 192)',
+			tension: 0.1
+		},
+		{
+			label: 'Costo de comision Mobex',
+			data: [5.00, 5.00, 5.00, 5.00],
+			fill: false,
+			borderColor: '#7000ff',
+			tension: 0.1
+		},
+		{
+			label: 'Costo de comision Pago360.',
+			data: [3.75, 3.75, 3.75, 3.75],
+			fill: false,
+			borderColor: '#003fc0',
+			tension: 0.1
+		}]
+		}
+
+ var chartInstanceComparativaML = new Chart(ctxCompartivaML, {
+		type: "line",
+		data: data
+	});
+
 // ============================================
 // As of Chart.js v2.7.0
 // http://www.chartjs.org/docs
