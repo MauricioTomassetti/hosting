@@ -263,7 +263,7 @@ $(function(){
 		},
 		{
 			label: 'Costo de comision MODDO',
-			data: [5.00, 5.00, 5.00, 5.00],
+			data: [0, 0, 0, 0],
 			fill: false,
 			borderColor: '#7000ff',
 			tension: 0.1
