@@ -169,7 +169,7 @@ $(function(){
 		});
 
 				//Grafico con Mobex
-				var ctxMobex = document.getElementById('comisionesMobex').getContext('2d');
+	/* 			var ctxMobex = document.getElementById('comisionesMobex').getContext('2d');
 				const labelsMobex = ['5 días de aprobado a liquidar.'];
 					data = {
 					labels: labelsMobex,
@@ -186,9 +186,9 @@ $(function(){
 					type: "bar",
 					data: data
 				});
-
+ */
 							//Grafico con PAGO360
-							var ctxPago360 = document.getElementById('comisionesPago360').getContext('2d');
+							/* var ctxPago360 = document.getElementById('comisionesPago360').getContext('2d');
 							const labelsPago360 =  ['Innmediato', '2 días hábiles.', '3 días hábiles.', '4 días hábiles.', '5 días hábiles.','14 días hábiles.'];
 								data = {
 								labels: labelsPago360,
@@ -245,7 +245,7 @@ $(function(){
 						 var chartInstancePago360 = new Chart(ctxPago360, {
 								type: "bar",
 								data: data
-							});
+							}); */
 					
 		
 	//Grafico ML con tienda online y link de cobro
@@ -255,24 +255,17 @@ $(function(){
 		data = {
 		labels: labelsCoparativaML,
 		datasets: [{
-			label: 'Costo de comision',
+			label: 'Costo de comision Mercado Pago Argentina',
 			data: [6.39, 4.29, 3.39, 1.79],
 			fill: false,
 			borderColor: 'rgb(75, 192, 192)',
 			tension: 0.1
 		},
 		{
-			label: 'Costo de comision Mobex',
+			label: 'Costo de comision MODDO',
 			data: [5.00, 5.00, 5.00, 5.00],
 			fill: false,
 			borderColor: '#7000ff',
-			tension: 0.1
-		},
-		{
-			label: 'Costo de comision Pago360.',
-			data: [3.75, 3.75, 3.75, 3.75],
-			fill: false,
-			borderColor: '#003fc0',
 			tension: 0.1
 		}]
 		}
