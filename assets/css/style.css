@@ -559,7 +559,7 @@ max-height: 95% !important;
 }
 
 [id=c-permit-tab-2-er]:checked~nav [for=c-permit-tab-2-er],[id=c-permit-tab-2-nd]:checked~nav [for=c-permit-tab-2-nd],[id=c-permit-tab-2-rd]:checked~nav [for=c-permit-tab-2-rd],[id=c-permit-tab-2-st]:checked~nav [for=c-permit-tab-2-st],[id=c-permit-tab-2-to]:checked~nav [for=c-permit-tab-2-to] {
-  background-color: #7000ff;
+  background-color: #07b5a9;
   color: #fff
 }
 
@@ -575,7 +575,7 @@ max-height: 95% !important;
 
 .l-main__side-menu-2 {
   background-image: linear-gradient( 
-138deg,#7000ff,#9c60c4);
+138deg,#07b5a9,#07b5a947);
   max-height: 95%  !important;
 }
 
@@ -686,6 +686,29 @@ max-height: 95% !important;
   transition: background-color 0.5s ease-in-out;
   border-bottom: 1px solid #4285f4;
 }
+
+.accordionTitleModo,
+.accordion__HeadingModo {
+  background-color: #07b5a9;
+  text-align: center;
+  font-weight: 700;
+  padding: 2em;
+  display: block;
+  text-decoration: none;
+  color: #fff;
+  transition: background-color 0.5s ease-in-out;
+  border-bottom: 1px solid #07b5a9;
+}
+
+.accordionTitleModo:before,
+.accordion__HeadingModo:before {
+  content: "+";
+  font-size: 1.5em;
+  line-height: 0.5em;
+  float: left;
+  transition: transform 0.3s ease-in-out;
+}
+
 .accordionTitle:before,
 .accordion__Heading:before {
   content: "+";

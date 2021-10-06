@@ -142,24 +142,17 @@ $(function(){
 	});
 
 		//Grafico ML con Point
-		var ctxPoint = document.getElementById('comisionesMLPoint').getContext('2d');
-		const labelsPoint = ['En el momento.', '10 días de aprobado a liquidar.','18 días de aprobado a liquidar.', '35 días de aprobado a liquidar.'];
+		var ctxPoint = document.getElementById('comisionesModo').getContext('2d');
+		const labelsPoint = ['En el momento.', 'Al momento de liquidar.'];
 			data = {
 			labels: labelsPoint,
 			datasets: [{
-				label: 'Tarjeta de débito.',
-				data: [6.39, 4.29, 3.39, 1.79],
+				label: 'Uso de plataforma - Codigo QR',
+				data: [0.00,0.00],
 				fill: false,
 				borderColor: 'rgb(75, 192, 192)',
 				tension: 0.1
-			},
-			{
-				label: 'Tarjeta de crédito.',
-				data: [12.39, 8.29, 7.39, 1.79],
-				fill: false,
-				borderColor: 'rgb(47, 240, 127)',
-				tension: 0.1
-			},
+			}
 		]
 			}
 	
@@ -273,7 +266,35 @@ $(function(){
  var chartInstanceComparativaML = new Chart(ctxCompartivaML, {
 		type: "line",
 		data: data
+  });
+  
+  	//Grafico ML con tienda online y link de cobro
+	var ctxCompartivaMODO = document.getElementById('comisionesComparativaMODO').getContext('2d');
+
+	const labelsCoparativaMODO = ['En el momento.', 'Al momento de liquidar'];
+		data = {
+		labels: labelsCoparativaMODO,
+		datasets: [{
+			label: 'Costo de comision Mercado Pago Argentina',
+			data: [6.39, 4.29, 3.39, 1.79],
+			fill: false,
+			borderColor: 'rgb(75, 192, 192)',
+			tension: 0.1
+		},
+		{
+			label: 'Costo de comision MODDO',
+			data: [0, 0, 0, 0],
+			fill: false,
+			borderColor: '#7000ff',
+			tension: 0.1
+		}]
+		}
+
+ var chartInstanceComparativaMODO = new Chart(ctxCompartivaMODO, {
+		type: "line",
+		data: data
 	});
+
 
 //grafico de barras stacked
 
