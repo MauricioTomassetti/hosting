@@ -466,7 +466,17 @@ max-height: 95% !important;
 /* Lazy Load Styles */
 .card-image {
 	display: block;
-	min-height: 20rem; /* layout hack */
+ /*  min-height: 20rem; /* layout hack */
+  min-height: 20rem;
+	background: #fff center center no-repeat;
+	background-size: cover;
+	filter: none;
+}
+
+.card-image-arg {
+	display: block;
+  min-height: 15rem;
+  max-width: 18rem;
 	background: #fff center center no-repeat;
 	background-size: cover;
 	filter: none;
@@ -476,6 +486,12 @@ max-height: 95% !important;
 	display: block;
 	width: 100%;
 	opacity: 0; /* visually hide the img element */
+}
+
+.card-image-arg > img {
+   display: block;
+   width: 100%;
+   opacity: 0;
 }
 
 .card-image.is-loaded {
