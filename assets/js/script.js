@@ -136,6 +136,7 @@ $(function () {
 		}]
 	}
 
+	
 	var chartInstance = new Chart(ctx, {
 		type: "line",
 		data: data
