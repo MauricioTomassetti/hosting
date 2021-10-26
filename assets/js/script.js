@@ -136,7 +136,7 @@ $(function () {
 		}]
 	}
 
-	
+
 	var chartInstance = new Chart(ctx, {
 		type: "line",
 		data: data
@@ -313,6 +313,28 @@ $(function () {
 		]}
 	
 		var chartMlChile = new Chart(ctxMlChile, {
+			type: "line",
+			data: data
+		});
+
+
+		//Kushki
+		var ctxMlKushki = document.getElementById('comisionesKushki').getContext('2d');
+		const labelsKushki =  ['0 días', '30 dias'];
+			data = {
+			labels: labelsKushki,
+			datasets: [{
+				label: 'Con todos los medios de pago aceptados + IVA (DOLARES)',
+				data: [260,260],
+				fill: false,
+				borderColor: 'rgb(75, 192, 192)',
+				backgroundColor: "blue",
+				tension: 0.1
+			},
+			
+		]}
+	
+		var chartMlChile = new Chart(ctxMlKushki, {
 			type: "line",
 			data: data
 		});
