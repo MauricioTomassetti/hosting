@@ -298,7 +298,7 @@ $(function () {
 
 		//Grafico con MercadoLibre Chile
 		var ctxMlChile = document.getElementById('comisionesMercadoPagoChile').getContext('2d');
-		const labelsMlChile =  ['En el momento', '14 dias después del pago aprovado'];
+		const labelsMlChile =  ['En el momento', '14 dias después del pago aprobado'];
 			data = {
 			labels: labelsMlChile,
 			datasets: [{
